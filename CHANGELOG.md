@@ -5,17 +5,46 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/mlcast-community/mlcast-datasets)
+## unreleased
+
+### Documentation
+- Add step 7 to CONTRIBUTING.md requiring contributors to create and upload an example repository to mlcast-community, demonstrating how to download data from their organization, transform it into Zarr format, and request an invitation to join the community in order to publish their repository
+
+## [v0.3.0](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.3.0)
+
+This release includes a new radar precipitation dataset from Belgium, as well as the addition of JupyterBook build checks and live preview deployments to all pull requests to ensure that documentation changes are properly rendered and reviewed before being merged.
+
+### Added
+
+- Belgian RADCLIM radar precipitation dataset covering 2017-2023 at 5min, 1km resolution [\#26](https://github.com/mlcast-community/mlcast-datasets/issues/26), [\#https://github.com/mlcast-community/mlcast-datasets/pull/39], @sidekock, @leifdenby
+
+### Documentation
+- Add JupyterBook build checks and live preview deployments to all pull requests [\#37](https://github.com/mlcast-community/mlcast-datasets/pull/37), [\#38](https://github.com/mlcast-community/mlcast-datasets/pull/38), [\#40](https://github.com/mlcast-community/mlcast-datasets/pull/40, [\#41](https://github.com/mlcast-community/mlcast-datasets/pull/41) @leifdenby
+
+
+## [v0.2.0](https://github.com/mlcast-community/mlcast-datasets/releases/tag/v0.2.0) - 2026-03-17
+
+This release includes three new radar precipitation datasets from the UK, Denmark, and Italy, as well as several maintenance updates to ensure all datasets in the catalog pass validation checks and to fix some rendering issues in the documentation.
 
 ### Added
 - UK Met Office C-band rain radar 1 km composite (2005-2025, 5min, OSGB 1 km) [\#17](https://github.com/mlcast-community/mlcast-datasets/issues/17), @franchg
 - Danish radar precipitation dataset covering 2016-2025 at 10min, 0.5km resolution, [\#21](https://github.com/mlcast-community/mlcast-datasets/pull/21), @arjj8
 - Italian DPC SRI radar precipitation dataset (2010-2025, 1km, 5min) [\#14](https://github.com/mlcast-community/mlcast-datasets/issues/14), @franchg
+- Météo-France radar precipitation dataset (from 2020-01-01 to 2024-12-31, 5min, 1km grid-size) [\#49](https://github.com/mlcast-community/mlcast-datasets/issues/49), @gzemo
 
 ### Maintenance
 
 - Fix jupyter book badge in README and update black with pre-commit to fix ci [\#18](https://github.com/mlcast-community/mlcast-datasets/pull/18), @leifdenby
 - Fix jupyter book rendering in github actions workflow by pinning jupyter book version <2 [\#24](https://github.com/mlcast-community/mlcast-datasets/pull/24), @leifdenby
+- Ensure all datasets in intake catalog pass validator by adding a test that runs mlcast-dataset-validator against each dataset [\#22](https://github.com/mlcast-community/mlcast-datasets/pull/22), @leifdenby
+- Fix copyright year rendered in jupyterbook footer [\#34](https://github.com/mlcast-community/mlcast-datasets/pull/34), @leifdenby
+
+### Fixed
+
+- A bug that made non-detection values into nan was fixed in the DMI dataset [\#32](https://github.com/mlcast-community/mlcast-datasets/pull/32), @arjj8
+
+- Update DWD-DE-radklim dataset to `v0.1.1` that fixes meta-information to match mlcast-validator requirements and rename `RR` field to `rainfall_amount` to be consistent with the units and standard name used [\#33](https://github.com/mlcast-community/mlcast-datasets/pull/33), @leifdenby
+
 
 ### Fixes
 - A bug that made non-detection values into nan was fixed in the DMI dataset [\#32](https://github.com/mlcast-community/mlcast-datasets/pull/32), @arjj8

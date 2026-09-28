@@ -7,7 +7,7 @@ sources:
     description: "RADKLIM Hourly Precipitation Data from Deutscher Wetterdienst (DWD), hosted on ECMWF S3"
     driver: zarr
     args:
-      urlpath: "s3://mlcast-source-datasets/radklim/v0.1.0/hourly.zarr/"
+      urlpath: "s3://mlcast-source-datasets/radklim/v0.1.1/hourly.zarr/"
       consolidated: true
       storage_options:
         anon: true
@@ -17,7 +17,7 @@ sources:
     description: "RADKLIM 5-Minute Precipitation Data from Deutscher Wetterdienst (DWD), hosted on ECMWF S3"
     driver: zarr
     args:
-      urlpath: "s3://mlcast-source-datasets/radklim/v0.1.0/5_minutes.zarr/"
+      urlpath: "s3://mlcast-source-datasets/radklim/v0.1.1/5_minutes.zarr/"
       consolidated: true
       storage_options:
         anon: true
@@ -48,6 +48,26 @@ sources:
     driver: zarr
     args:
       urlpath: "s3://mlcast-source-datasets/UK-METOFFICE-RADAR/v0.1.0/uk-metoffice-c-band-rain-radar.zarr/"
+      consolidated: true
+      storage_options:
+        anon: true
+        endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
+
+  be_rmi_radclim_mfb_5min:
+    description: "RMI (Royal Meteorological Institute of Belgium) RADCLIM 1 km radar-rain-gauge merged rain rate with mean-field bias (MFB) correction (5-min, Belgian Lambert EPSG:3812), hosted on ECMWF S3"
+    driver: zarr
+    args:
+      urlpath: "s3://mlcast-source-datasets/radar_precipitation/BE-RMI-radclim-mfb/v0.1.1/5_minutes.zarr/"
+      consolidated: true
+      storage_options:
+        anon: true
+        endpoint_url: "https://object-store.os-api.cci2.ecmwf.int"
+
+  fr_mf_prate_5min:
+    description: "Météo-France 1 km radar rainfall amount dataset (mm*10^-2) converted in precipitation rate (mm/h)"
+    driver: zarr
+    args:
+      urlpath: "s3://mlcast-source-datasets/FR-MF-prate/v0.1.0/fr-mf-prate-5min.zarr/"
       consolidated: true
       storage_options:
         anon: true
